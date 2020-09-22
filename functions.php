@@ -12,6 +12,8 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.0' );
 }
 
+require_once( __DIR__ . '/custom-elementor.php' );
+
 if ( ! function_exists( 'westlake_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -100,27 +102,11 @@ if ( ! function_exists( 'westlake_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+
 	}
 endif;
 add_action( 'after_setup_theme', 'westlake_setup' );
 
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function westlake_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'westlake_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'westlake_content_width', 0 );
-
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
 function westlake_widgets_init() {
 	register_sidebar(
 		array(
@@ -141,15 +127,14 @@ add_action( 'widgets_init', 'westlake_widgets_init' );
  */
 function westlake_scripts() {
 	wp_enqueue_style( 'westlake-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'westlake-style', 'rtl', 'replace' );
-
 	wp_enqueue_script( 'westlake-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'westlake_scripts' );
+
+add_action( 'admin_enqueue_scripts', 'load_admin_style' );
+function load_admin_style() {
+    wp_register_style( 'admin_css', get_template_directory_uri() . '/widgets/admin-style.css', false, '1.0.0' );
+}
 
 /**
  * Custom template tags for this theme.
