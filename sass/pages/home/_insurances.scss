@@ -1,0 +1,24 @@
+.home-insurances {
+  &__logos {
+    .elementor-widget-image .elementor-image img {
+      max-width: 150px;
+    }
+
+    @include breakpoint(sm) {
+      + .home-insurances__logos {
+        border-top: 1px solid #0073ae;
+      }
+
+      .elementor-column {
+        min-height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .elementor-column:not(:last-child) {
+        border-right: 1px solid #0073ae;
+      }
+    }
+  }
+}

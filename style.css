@@ -3,7 +3,7 @@ Theme Name: westlake
 Theme URI: http://underscores.me/
 Author: Underscores.me
 Author URI: http://underscores.me/
-Description: Description
+Description: Custom theme for WestLake Village
 Version: 1.0.0
 Tested up to: 5.4
 Requires PHP: 5.6
@@ -11,15 +11,6 @@ License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: westlake
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned.
-
-westlake is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -581,292 +572,162 @@ textarea {
 	width: 100%;
 }
 
-/* Navigation
---------------------------------------------- */
-.main-navigation {
-	display: block;
-	width: 100%;
+.skew-icon-widget {
+	position: relative;
+	text-align: center;
+	color: #fff;
 }
 
-.main-navigation ul {
-	display: none;
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-}
-
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
+.skew-icon-widget:before {
+	content: '';
 	position: absolute;
-	top: 100%;
-	left: -999em;
-	z-index: 99999;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 80%;
+	background-color: #0073ae;
+	transform: skew(2deg, 2deg);
 }
 
-.main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
+.skew-icon-widget--border {
+	color: #000;
 }
 
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	display: block;
-	left: auto;
+.skew-icon-widget--border:before {
+	border-width: 1px;
+	border-color: #0073ae;
+	border-style: solid;
+	background-color: #e7eeff;
 }
 
-.main-navigation ul ul a {
-	width: 200px;
+.skew-icon-widget__image {
+	width: 65px;
 }
 
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
+.skew-icon-widget__inner {
+	position: relative;
+	z-index: 1;
+	padding: 30px 15px;
 }
 
-.main-navigation li {
+.skew-icon-widget__header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 110px;
+	height: 110px;
+	border-width: 1px;
+	border-color: #0073ae;
+	border-style: solid;
+	border-radius: 50%;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+.skew-icon-widget__title {
+	font-size: 25px;
+	text-transform: uppercase;
+	font-weight: 400;
+	margin-bottom: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.skew-icon-widget__content {
+	max-width: 250px;
+	margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+	.skew-icon-widget__content {
+		min-height: 200px;
+	}
+	.skew-icon-widget__image {
+		width: 96px;
+	}
+	.skew-icon-widget__header {
+		width: 190px;
+		height: 190px;
+		margin-bottom: 75px;
+	}
+	.skew-icon-widget__title {
+		font-size: 30px;
+		max-width: 85%;
+	}
+	.skew-icon-widget__inner {
+		padding-bottom: 50px;
+	}
+}
+
+.elementor-widget-heading .elementor-size-medium {
 	position: relative;
 }
 
-.main-navigation a {
-	display: block;
-	text-decoration: none;
-}
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: flex;
-	}
-}
-
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
-	margin: 0 0 1.5em;
-}
-
-.comment-navigation .nav-links,
-.posts-navigation .nav-links,
-.post-navigation .nav-links {
-	display: flex;
-}
-
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	flex: 1 0 50%;
-}
-
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	text-align: end;
-	flex: 1 0 50%;
-}
-
-/* Posts and pages
---------------------------------------------- */
-.sticky {
-	display: block;
-}
-
-.post,
-.page {
-	margin: 0 0 1.5em;
-}
-
-.updated:not(.published) {
-	display: none;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
-}
-
-/* Comments
---------------------------------------------- */
-.comment-content a {
-	word-wrap: break-word;
-}
-
-.bypostauthor {
-	display: block;
-}
-
-/* Widgets
---------------------------------------------- */
-.widget {
-	margin: 0 0 1.5em;
-}
-
-.widget select {
-	max-width: 100%;
-}
-
-/* Media
---------------------------------------------- */
-.page-content .wp-smiley,
-.entry-content .wp-smiley,
-.comment-content .wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
-}
-
-/* Make sure logo link wraps around logo image. */
-.custom-logo-link {
-	display: inline-block;
-}
-
-/* Captions
---------------------------------------------- */
-.wp-caption {
-	margin-bottom: 1.5em;
-	max-width: 100%;
-}
-
-.wp-caption img[class*="wp-image-"] {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
-}
-
-.wp-caption-text {
-	text-align: center;
-}
-
-/* Galleries
---------------------------------------------- */
-.gallery {
-	margin-bottom: 1.5em;
-	display: grid;
-	grid-gap: 1.5em;
-}
-
-.gallery-item {
-	display: inline-block;
-	text-align: center;
-	width: 100%;
-}
-
-.gallery-columns-2 {
-	grid-template-columns: repeat(2, 1fr);
-}
-
-.gallery-columns-3 {
-	grid-template-columns: repeat(3, 1fr);
-}
-
-.gallery-columns-4 {
-	grid-template-columns: repeat(4, 1fr);
-}
-
-.gallery-columns-5 {
-	grid-template-columns: repeat(5, 1fr);
-}
-
-.gallery-columns-6 {
-	grid-template-columns: repeat(6, 1fr);
-}
-
-.gallery-columns-7 {
-	grid-template-columns: repeat(7, 1fr);
-}
-
-.gallery-columns-8 {
-	grid-template-columns: repeat(8, 1fr);
-}
-
-.gallery-columns-9 {
-	grid-template-columns: repeat(9, 1fr);
-}
-
-.gallery-caption {
-	display: block;
-}
-
-/* Text meant only for screen readers. */
-.screen-reader-text {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	clip-path: inset(50%);
+.elementor-widget-heading .elementor-size-medium:before {
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: -5px;
+	width: 150px;
 	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute !important;
-	width: 1px;
-	word-wrap: normal !important;
+	transform: translateX(-50%);
+	background-color: #0073ae;
 }
 
-.screen-reader-text:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	clip-path: none;
-	color: #21759b;
-	display: block;
-	font-size: 0.875rem;
-	font-weight: 700;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000;
+.home-greeting.elementor-section .elementor-background-overlay {
+	height: 80%;
+	background: linear-gradient(-180deg, #000, transparent);
 }
 
-/* Do not show the outline on the skip link target. */
-#primary[tabindex="-1"]:focus {
-	outline: 0;
+.home-services .elementor-widget-heading .elementor-size-medium:before {
+	background-color: #fff;
 }
 
-.alignleft {
-	/*rtl:ignore*/
-	float: left;
-	/*rtl:ignore*/
-	margin-right: 1.5em;
-	margin-bottom: 1.5em;
+.home-services__grid .elementor-icon-box-title {
+	margin-bottom: 10px;
 }
 
-.alignright {
-	/*rtl:ignore*/
-	float: right;
-	/*rtl:ignore*/
-	margin-left: 1.5em;
-	margin-bottom: 1.5em;
+@media screen and (min-width: 768px) {
+	.home-services__grid .elementor-icon-box-title {
+		max-width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+		min-height: 75px;
+	}
+	.home-services__grid .elementor-column-gap-default > .elementor-row > .elementor-column > .elementor-element-populated {
+		padding: 0;
+	}
+	.home-services__grid .elementor-widget-icon-box {
+		margin-bottom: 0 !important;
+		min-height: 415px;
+		border-right: 1px solid #fff;
+		padding: 30px;
+	}
+	.home-services__grid .elementor-widget-icon-box:not(:last-child) {
+		border-bottom: 1px solid #fff;
+	}
+	.home-services__grid .elementor-column:last-child .elementor-widget-icon-box {
+		border-right: none;
+	}
 }
 
-.aligncenter {
-	clear: both;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 1.5em;
+.home-insurances__logos .elementor-widget-image .elementor-image img {
+	max-width: 150px;
+}
+
+@media screen and (min-width: 768px) {
+	.home-insurances__logos + .home-insurances__logos {
+		border-top: 1px solid #0073ae;
+	}
+	.home-insurances__logos .elementor-column {
+		min-height: 150px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.home-insurances__logos .elementor-column:not(:last-child) {
+		border-right: 1px solid #0073ae;
+	}
 }
 
 /*# sourceMappingURL=style.css.map */
