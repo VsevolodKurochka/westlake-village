@@ -17,8 +17,16 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 @import "generic/box-sizing";
 @import "base/base";
 
+@import "layouts/nav";
 @import "components/skew-icon";
 @import "components/elementor-widget-heading";
 @import "pages/home/greeting";
 @import "pages/home/services";
 @import "pages/home/insurances";
+@import "pages/home/testimonial";
+@import "pages/home/contact-us";
+@import "pages/home/who-we-are";
+@import "pages/home/copyright";
+
+@import "components/section-border-top";
+@import "slick";
