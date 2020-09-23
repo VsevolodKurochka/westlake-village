@@ -21,17 +21,34 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<header id="masthead" class="site-header">
-        <?php the_custom_logo(); ?>
-
-		<nav id="site-navigation" class="main-navigation">
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+    <?php if (!is_page_template('template-no-header.php')) { ?>
+    <div class="nav__fixed">
+        <div class="nav" id="js-navigation">
+            <div class="nav__container container">
+                <div class="nav__row">
+                    <div class="nav__logo">
+                        <button class="hamburger hamburger_effect-2" type="button" id="js-nav-hamburger">
+                            <span class="hamburger__lines"><span></span><span></span><span></span><span></span></span>
+                        </button>
+                        <?php the_custom_logo(); ?>
+                    </div>
+                    <div class="nav__content">
+                        <a href="tel: +1 00000000" class="nav__phone">
+                            <i aria-hidden="true" class="fas fa-phone-volume"></i>
+                            <span>+1 00000000</span>
+                        </a>
+                        <nav class="nav__menu" id="js-navigation-menu">
+                            <?php
+                            wp_nav_menu(
+                                array(
+                                    'theme_location' => 'menu-1'
+                                )
+                            );
+                            ?>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php } ?>

@@ -127,7 +127,9 @@ add_action( 'widgets_init', 'westlake_widgets_init' );
  */
 function westlake_scripts() {
 	wp_enqueue_style( 'westlake-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_enqueue_script( 'westlake-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'westlake-jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'westlake-slick', get_template_directory_uri() . '/js/slick.min.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'westlake-jquery-main', get_template_directory_uri() . '/js/jquery.main.js', array(), _S_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'westlake_scripts' );
 
@@ -145,3 +147,5 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+show_admin_bar(false);

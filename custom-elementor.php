@@ -17,6 +17,7 @@ class Widget_Loader{
 
     private function include_widgets_files(){
         require_once(__DIR__ . '/widgets/skew-icon-widget.php');
+        require_once(__DIR__ . '/widgets/testimonial-slider.php');
     }
 
     public function register_widgets(){
@@ -24,7 +25,7 @@ class Widget_Loader{
         $this->include_widgets_files();
 
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\SkewIconWidget());
-
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\TestimonialSlider());
     }
 
     public function __construct(){
