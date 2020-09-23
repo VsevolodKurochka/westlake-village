@@ -10,7 +10,7 @@
     width: 100%;
     height: 80%;
     background-color: #0073ae;
-    transform: skew(2deg, 2deg);
+    transform: skew(0deg, 2deg);
   }
   &--border {
     color: #000;
@@ -56,6 +56,9 @@
   }
 
   @include breakpoint(sm) {
+    &__inner:before {
+      transform: skew(2deg, 2deg);
+    }
     &__content {
       min-height: 200px;
     }

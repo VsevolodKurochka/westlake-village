@@ -6,6 +6,10 @@
     .elementor-icon-box-title {
       margin-bottom: 10px;
     }
+    .elementor-widget-icon-box {
+      border-bottom: 1px solid #fff;
+      padding-bottom: 30px;
+    }
     @include breakpoint(sm) {
       .elementor-icon-box-title {
         max-width: 80%;
@@ -18,7 +22,7 @@
       }
       .elementor-widget-icon-box {
         margin-bottom: 0 !important;
-        min-height: 415px;
+        min-height: 425px;
         border-right: 1px solid #fff;
         padding: 30px;
         &:not(:last-child) {
