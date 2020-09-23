@@ -31,4 +31,7 @@
       bottom: -4px;
     }
   }
+  @include breakpoint(sm) {
+    min-height: 600px;
+  }
 }

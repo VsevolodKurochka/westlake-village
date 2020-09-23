@@ -145,11 +145,19 @@
   color: #00c800;
 }
 @media (min-width: 1025px) {
+  .nav__menu ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .nav__menu li:not(:last-child) {
+    margin-right: 20px;
+  }
   .nav__menu li {
     margin-bottom: 0;
   }
   .nav__menu li a {
-    padding: 2px 10px;
+    padding: 0;
   }
   .nav__menu li a:hover {
     opacity: 0.7;

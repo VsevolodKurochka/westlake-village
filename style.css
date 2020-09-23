@@ -736,11 +736,19 @@ textarea {
 }
 
 @media (min-width: 1025px) {
+	.nav__menu ul {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+	}
+	.nav__menu li:not(:last-child) {
+		margin-right: 20px;
+	}
 	.nav__menu li {
 		margin-bottom: 0;
 	}
 	.nav__menu li a {
-		padding: 2px 10px;
+		padding: 0;
 	}
 	.nav__menu li a:hover {
 		opacity: 0.7;
@@ -1104,6 +1112,12 @@ textarea {
 	}
 }
 
+@media screen and (min-width: 768px) {
+	.home-greeting.elementor-section {
+		min-height: 600px;
+	}
+}
+
 .home-services .elementor-widget-heading .elementor-size-medium:before {
 	background-color: #fff;
 }
@@ -1159,8 +1173,8 @@ textarea {
 	align-items: center;
 	flex-basis: 33%;
 	padding: 10px;
-	border-right: 1px solid #0073ae;
-	border-bottom: 1px solid #0073ae;
+	border-right: 1px solid rgba(0, 115, 174, 0.3);
+	border-bottom: 1px solid rgba(0, 115, 174, 0.3);
 }
 
 .home-insurances .elementor-image-gallery .gallery-item:nth-child(3n) {
@@ -1169,7 +1183,7 @@ textarea {
 
 .home-insurances .elementor-image-gallery .gallery-item:last-child {
 	border-bottom: none;
-	border-left: 1px solid #0073ae;
+	border-left: 1px solid rgba(0, 115, 174, 0.3);
 }
 
 @media screen and (min-width: 768px) {
@@ -1181,10 +1195,10 @@ textarea {
 		border-bottom: none;
 	}
 	.home-insurances .elementor-image-gallery .gallery-item:nth-child(n+5) {
-		border-top: 1px solid #0073ae;
+		border-top: 1px solid rgba(0, 115, 174, 0.3);
 	}
 	.home-insurances .elementor-image-gallery .gallery-item:not(:last-child) {
-		border-right: 1px solid #0073ae;
+		border-right: 1px solid rgba(0, 115, 174, 0.3);
 	}
 	.home-insurances .elementor-image-gallery .gallery-item:nth-child(5) {
 		border-right: none;
