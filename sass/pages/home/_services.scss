@@ -25,7 +25,9 @@
         min-height: 425px;
         border-right: 1px solid #fff;
         padding: 30px;
-        &:not(:last-child) {
+        border-bottom: none;
+
+        &:first-child {
           border-bottom: 1px solid #fff;
         }
       }

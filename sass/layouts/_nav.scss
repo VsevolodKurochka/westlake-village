@@ -172,6 +172,8 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
   }
 }
 .nav__logo img {
@@ -214,7 +216,6 @@
 .hamburger {
   position: relative;
   z-index: 100;
-  margin-right: 10px;
   padding: 0;
   cursor: pointer;
   border: none;
@@ -266,7 +267,7 @@
 .hamburger__lines span:nth-child(2),
 .hamburger__lines span:nth-child(3) {
   top: 13px;
-  left: -7px;
+  left: 0;
 }
 .hamburger__lines span:nth-child(4) {
   top: 25px;

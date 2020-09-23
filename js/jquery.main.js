@@ -31,6 +31,11 @@ $(document).ready(function(){
 		$('#js-navigation-menu').toggleClass('nav__menu_active');
 	});
 
+	$('#js-navigation-menu').on('click', 'a[href*="#"]', function () {
+		$('#js-navigation-menu').removeClass('nav__menu_active');
+		$('#js-nav-hamburger').removeClass('active');
+	});
+
 	function showModal(modal) {
 		$('.modal').removeClass('modal_showing_in');
 		$(modal).addClass('modal_showing_in');
