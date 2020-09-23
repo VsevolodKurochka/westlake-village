@@ -27,7 +27,7 @@ get_header();
         while ( have_posts() ) :
             the_post();
 
-            get_template_part( 'template-parts/content', 'emptypageu' );
+            get_template_part( 'template-parts/content', 'emptypage' );
 
         endwhile; // End of the loop.
         ?>
